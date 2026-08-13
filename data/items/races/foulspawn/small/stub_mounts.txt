@@ -2,26 +2,12 @@
 
 
 #newitem
-#basechance 3
 #id template
 #gameid -1
 #armor
 #sprite /graphics/foulspawn/small/shadow.png
-#tag "animal varied"
-#enditem
-
-#newitem
-#id template
-#gameid -1
-#armor
-#sprite /graphics/foulspawn/small/shadow.png
-#tag "animal varied"
-#enditem
-
-#newitem
-#id template
-#gameid -1
-#armor
-#sprite /graphics/foulspawn/small/shadow.png
+-- Ideally Foulspawn cavalry templates would have an actual mount
+-- equipped, so that different mount costs could also be averaged
+-- #command "#mountmnr montag_template_mount"
 #tag "animal varied"
 #enditem

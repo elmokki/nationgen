@@ -1,6 +1,8 @@
 package nationGen.misc;
 
 import com.elmokki.Generic;
+
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import nationGen.magic.MagicPath;
@@ -72,6 +74,15 @@ public class Arg {
     } catch (NumberFormatException e) {
       return false;
     }
+  }
+
+  public boolean hasOperator(List<Operator> ops) {
+    Optional<Operator> thisOp = this.getOperator();
+    return ops.stream().anyMatch(o -> thisOp.equals(Optional.ofNullable(o)));
+  }
+
+  public boolean hasOperator(Operator op) {
+    return this.hasOperator(List.of(op));
   }
 
   public int getInt() {

@@ -2,15 +2,14 @@
 
 #newpose
 #basechance 500000000
--- #basechance 0
 #id "foulspawn cavalry"
 #role "mounted"
-#define "#skilledrider 1"
+#command "#skilledrider 1"
+#command "#rpcost +10"
 
 #forcedname "Foulspawn Cavalry"
 
-#montagpose "normal cavalry" 4
-#montagpose "centauroid" 2
+#montagpose "normal cavalry" 3
 
 #chanceinc moduleid herogen *0
 
@@ -18,29 +17,45 @@
 #montagpose_max 4
 
 #load basesprite /data/items/races/foulspawn/small/bases_cavalry.txt
-
 #load mount /data/items/races/foulspawn/small/stub_mounts.txt
-
 #load armor /data/items/races/foulspawn/small/armor_placeholder.txt
 #load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
-
 #load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
-
 #maxunits 2
+#endpose
 
+#newpose
+#basechance 500000000
+#id "foulspawn centauroids"
+#role "mounted"
+
+#forcedname "Foulspawn Centauroids"
+
+#montagpose "centauroid" 3
+
+#chanceinc moduleid herogen *0
+
+#montagpose_min 3
+#montagpose_max 3
+
+#load basesprite /data/items/races/foulspawn/small/bases_cavalry.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
+#maxunits 2
 #endpose
 
 
 #newpose
 #basechance 500000000
--- #basechance 0
 #id "foulspawn elite cavalry"
 #role "elite mounted"
+#command "#skilledrider 2"
+#command "#rpcost +15"
 
 #forcedname "Foulspawn Elite Cavalry"
 
-#montagpose "normal cavalry" 4
-#montagpose "centauroid" 2
+#montagpose "normal cavalry" 3
 
 #chanceinc moduleid herogen *0
 
@@ -48,29 +63,46 @@
 #montagpose_max 5
 
 #load basesprite /data/items/races/foulspawn/small/bases_cavalry.txt
-
 #load mount /data/items/races/foulspawn/small/stub_mounts.txt
-
 #load armor /data/items/races/foulspawn/small/armor_placeholder.txt
 #load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
-
 #load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
-
 #maxunits 2
-
 #endpose
 
 
 #newpose
 #basechance 500000000
--- #basechance 0
+#id "foulspawn elite centauroids"
+#role "elite mounted"
+
+#forcedname "Foulspawn Elite Centauroids"
+
+#montagpose "centauroid" 3
+
+#chanceinc moduleid herogen *0
+
+#montagpose_min 3
+#montagpose_max 3
+
+#load basesprite /data/items/races/foulspawn/small/bases_cavalry.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
+#maxunits 2
+#endpose
+
+
+#newpose
+#basechance 500000000
 #id "foulspawn sacred cavalry"
 #role "sacred mounted"
+#command "#skilledrider 2"
+#command "#rpcost +15"
 
 #forcedname "Foulspawn Sacred Cavalry"
 
-#montagpose "normal cavalry" 4
-#montagpose "centauroid" 2
+#montagpose "normal cavalry" 3
 
 #chanceinc moduleid herogen *0
 
@@ -78,17 +110,36 @@
 #montagpose_max 5
 
 #load basesprite /data/items/races/foulspawn/small/bases_cavalry.txt
-
 #load mount /data/items/races/foulspawn/small/stub_mounts.txt
-
 #load armor /data/items/races/foulspawn/small/armor_placeholder.txt
 #load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
-
 #load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
-
 #maxunits 2
-
 #endpose
+
+
+#newpose
+#basechance 500000000
+#id "foulspawn sacred centauroids"
+#role "sacred mounted"
+
+#forcedname "Foulspawn Sacred Centauroids"
+
+#montagpose "centauroid" 3
+
+#chanceinc moduleid herogen *0
+
+#montagpose_min 3
+#montagpose_max 5
+
+#load basesprite /data/items/races/foulspawn/small/bases_cavalry.txt
+#load armor /data/items/races/foulspawn/small/armor_placeholder.txt
+#load helmet /data/items/races/foulspawn/small/helmet_placeholder.txt
+#load weapon /data/items/races/foulspawn/small/weapon_placeholder.txt
+#maxunits 2
+#endpose
+
+
 
 -------- Mounted poses
 

@@ -28,6 +28,7 @@ public class MountUnit extends Unit {
   boolean sacred = false;
   private int gcost = 0;
   private int rcost = 0;
+  private int rpcost = 0;
   private double bardingGoldMultiplier = 1;
   private int bardingResCost = 0;
 
@@ -75,6 +76,7 @@ public class MountUnit extends Unit {
     this.sacred = mountUnit.sacred;
     this.gcost = mountUnit.gcost;
     this.rcost = mountUnit.rcost;
+    this.rpcost = mountUnit.rpcost;
     this.bardingGoldMultiplier = mountUnit.bardingGoldMultiplier;
     this.bardingResCost = mountUnit.bardingResCost;
   }
@@ -198,8 +200,13 @@ public class MountUnit extends Unit {
     return finalCost;
   }
 
+  public int getRecPointCost(int gcost) {
+    return Unit.getAutocalcRecPoints(gcost);
+  }
+
   public void polish(NationGen n, Nation nation) {
     Filter polishFilter = new Filter(n);
+    List<Command> polishedCommands = new ArrayList<>();
     polishFilter.name = "Mount unit";
 
     // Copy sacredness from main form
@@ -215,21 +222,21 @@ public class MountUnit extends Unit {
       else if (c.command.equals("#heat")) {
         String resistanceTag = "#fireres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.addCommands(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
+        polishedCommands.add(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
       }
       
       // Copy rider's cold resistance if the rider has a chill aura and the mount's resistance is worse
       else if (c.command.equals("#cold")) {
         String resistanceTag = "#coldres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.addCommands(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
+        polishedCommands.add(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
       }
       
       // Copy rider's poison resistance if the rider has a poison aura and the mount's resistance is worse
       else if (c.command.equals("#poisoncloud")) {
         String resistanceTag = "#poisonres";
         int inheritableResistance = getResistanceFromRiderToInherit(mountedRiderCommands, resistanceTag);
-        polishFilter.addCommands(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
+        polishedCommands.add(CommandFactory.parse(resistanceTag + " " + inheritableResistance));
       }
     }
 
@@ -247,13 +254,15 @@ public class MountUnit extends Unit {
       }
     }
 
-    if (polishFilter.getCommands().size() > 0) {
+    if (polishedCommands.size() > 0) {
+      polishFilter.addCommands(polishedCommands);
       this.appliedFilters.add(polishFilter);
       this.addCommands(polishFilter.getCommands());
     }
 
     this.gcost = this.getGoldCost();
     this.rcost = this.getResCost();
+    this.rpcost = this.getRecPointCost(this.gcost);
     this.polished = true;
   }
 
@@ -369,21 +378,24 @@ public class MountUnit extends Unit {
 
   @Override
   public List<String> writeLines(String spritedir) {
+    boolean hasItemSlots = false;
+    List<Command> handledCommands = this.getAllHandledCommands();
     List<String> lines = new ArrayList<>();
+
     lines.add("--- Mount form for " + rider.getName());
     lines.add("-- Gold: " + this.gcost + " (included in mounted unit)");
     lines.add("-- Barding Gold Multiplier: x" + this.bardingGoldMultiplier + " (included above)");
-    
     lines.add("#newmonster " + this.id);
-  
-    List<Command> handledCommands = this.getAllHandledCommands();
-    boolean hasItemSlots = false;
-    boolean hasOwnGcost = false;
 
     // Own non-gcost commands first due to #copystats
     for (Command c : handledCommands) {
+      // Uses this.gcost instead
       if (c.command.equals("#gcost")) {
-        hasOwnGcost = true;
+        continue;
+      }
+
+      // Uses this.rpcost instead
+      if (c.command.equals("#rpcost")) {
         continue;
       }
 
@@ -404,12 +416,8 @@ public class MountUnit extends Unit {
       }
     }
 
-    // The MountUnit gcost is written as part of the rider Unit itself as a total.
-    // If the mount has an explicit gcost, we want to set it to 0. Otherwise,
-    // Dominions will autocalculate the mount cost and inflate it.
-    if (hasOwnGcost) {
-      lines.add("#gcost 0");
-    }
+    lines.add("#gcost " + this.gcost);
+    lines.add("#rpcost " + this.rpcost);
 
     if (this.mount.getCommands().stream().anyMatch(c -> c.command.equals("#spr1"))) {
       lines.add("#spr1 \"" + this.getSpritePath(spritedir, "#spr1") + "\"");

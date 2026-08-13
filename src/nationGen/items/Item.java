@@ -22,8 +22,9 @@ public class Item extends Drawable {
   public DominionsId dominionsId = new DominionsId();
   public List<ItemDependency> dependencies = new ArrayList<>();
 
-  private List<ItemType> itemTypes = new ArrayList<>();
-  private String bardingId;
+  protected List<ItemType> itemTypes = new ArrayList<>();
+  protected boolean isIntrinsic = false;
+  protected String bardingId;
 
   public Item(NationGen nationGen) {
     super(nationGen);
@@ -41,6 +42,7 @@ public class Item extends Drawable {
 
     this.slot = item.slot;
     this.set = item.set;
+    this.isIntrinsic = item.isIntrinsic;
   }
 
   protected NationGenDB getItemDb() {
@@ -210,10 +212,10 @@ public class Item extends Drawable {
   }
 
   public int getHandsRequiredToUse() {
-    boolean isIntrinsic = this.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
+    boolean needsNoHands = this.isIntrinsic || this.getBooleanFromDb(ItemProperty.INTRINSIC.toDBColumn());
     boolean isRanged = this.getIntegerFromDb(ItemProperty.RANGE.toDBColumn(), 0) != 0;
     boolean isTwoHanded = this.getBooleanFromDb(ItemProperty.IS_2H.toDBColumn());
-    int handsNeeded = isIntrinsic || isRanged ? 0 : !isTwoHanded ? 1 : 2;
+    int handsNeeded = needsNoHands || isRanged ? 0 : !isTwoHanded ? 1 : 2;
     return handsNeeded;
   }
 
@@ -310,6 +312,9 @@ public class Item extends Drawable {
         case "#barding":
           this.bardingId = command.args.getString(0);
           this.itemTypes.add(ItemType.BARDING);
+          break;
+        case "#intrinsic":
+          this.isIntrinsic = true;
           break;
         case "#mountmnr":
           this.itemTypes.add(ItemType.MOUNT);
