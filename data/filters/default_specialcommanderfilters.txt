@@ -194,7 +194,6 @@
 #command "#comslave"
 #command "#gcost +10"
 #unitname "Communicant"
-#unitname "Supplicant"
 #basechance 0
 #chanceinc magic astral 3
 #description "is able to serve as a communion or sabbath slave."
@@ -206,8 +205,8 @@
 #end
 
 #new
-#id "comslave blood"
-#command "#comslave"
+#id "sabbathslave"
+#command "#sabbathslave"
 #command "#gcost +10"
 #unitname "Sabbath Slave"
 #unitname "Supplicant"
@@ -222,8 +221,8 @@
 #end
 
 #new
-#id "comslave chorus"
-#command "#comslave"
+#id "chorusslave"
+#command "#chorusslave"
 #command "#spellsinger"
 #command "#gcost +10"
 #unitname "Chorus Singer"
@@ -245,7 +244,6 @@
 #command "#reclimit 1"
 #caponlychance 0
 #unitname "Communicant"
-#unitname "Supplicant"
 #basechance 0
 #chanceinc magic astral 1
 #description "is able to serve as a communion or sabbath slave."
@@ -257,8 +255,8 @@
 #end
 
 #new
-#id "comslave-troop-blood-1"
-#command "#comslave"
+#id "sabbathslave-troop-1"
+#command "#sabbathslave"
 #command "#gcost +40"
 #command "#reclimit 1"
 #caponlychance 0
@@ -275,8 +273,8 @@
 #end
 
 #new
-#id "comslave-chorus-1"
-#command "#comslave"
+#id "chorusslave-troop-1"
+#command "#chorusslave"
 #command "#spellsinger"
 #command "#gcost +40"
 #command "#reclimit 1"
@@ -297,7 +295,6 @@
 #command "#gcost +40"
 #command "#reclimit 3"
 #unitname "Communicant"
-#unitname "Supplicant"
 #basechance 0.5
 #chanceinc magic astral 0.25
 #description "is able to serve as a communion or sabbath slave."
@@ -309,8 +306,8 @@
 #end
 
 #new
-#id "comslave-troop-blood-3"
-#command "#comslave"
+#id "sabbathslave-troop-3"
+#command "#sabbathslave"
 #command "#gcost +40"
 #command "#reclimit 3"
 #unitname "Sabbath Slave"
@@ -326,8 +323,8 @@
 #end
 
 #new
-#id "comslave-chorus-3"
-#command "#comslave"
+#id "chorusslave-troop-3"
+#command "#chorusslave"
 #command "#spellsinger"
 #command "#gcost +40"
 #command "#reclimit 3"
@@ -348,7 +345,6 @@
 #command "#gcost +50"
 #command "#reclimit 1"
 #unitname "Communicant"
-#unitname "Supplicant"
 #basechance 0
 #chanceinc magic astral 0.125
 #description "is able to serve as a communion or sabbath slave."
@@ -360,8 +356,8 @@
 #end
 
 #new
-#id "comslave-troop-blood-5"
-#command "#comslave"
+#id "sabbathslave-troop-5"
+#command "#sabbathslave"
 #command "#gcost +50"
 #command "#reclimit 1"
 #unitname "Sabbath Slave"
@@ -377,8 +373,8 @@
 #end
 
 #new
-#id "comslave-chorus-5"
-#command "#comslave"
+#id "chorusslave-5"
+#command "#chorusslave"
 #command "#spellsinger"
 #command "#gcost +50"
 #command "#reclimit 5"

@@ -58,6 +58,7 @@ public class SacredGenerator extends TroopGenerator {
   private void addEpicness(Unit unit, boolean isSacred, int power) {
     // Create a power/stat upgrade budget for this unit
     UnitPower unitPower = new UnitPower(power, 1);
+    unit.setPower(unitPower);
 
     // Vary the base unit power and stat upgrade budget with some RNG to diversify resulting units
     unitPower.rollChanceOfStatUpgradeBudgetChange(random, 0.25, 1);
@@ -362,7 +363,7 @@ public class SacredGenerator extends TroopGenerator {
         int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
 
         power -= powerCost;
-        unit.setSlot("weapon", mainWeapon);
+        unit.setSlot("weapon", customWeapon.get());
       }
     }
 
@@ -376,7 +377,7 @@ public class SacredGenerator extends TroopGenerator {
         int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
 
         power -= powerCost;
-        unit.setSlot("bonusweapon", bonusWeapon);
+        unit.setSlot("bonusweapon", customWeapon.get());
       }
     }
 
@@ -395,7 +396,7 @@ public class SacredGenerator extends TroopGenerator {
         int powerCost = (enchantment != null) ? (int)enchantment.power : 1;
 
         power -= powerCost;
-        unit.setSlot("offhand", offhandWeapon);
+        unit.setSlot("offhand", customWeapon.get());
       }
     }
   }

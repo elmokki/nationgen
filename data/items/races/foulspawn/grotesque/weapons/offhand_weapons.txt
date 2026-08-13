@@ -1,10 +1,24 @@
+#newitem
+#id left_arm_empty
+#gameid -1
+#type left_arm
+#type left_hand_slot
+#needstype left_arm humanoid
+#enditem
+
+#newitem
+#id right_arm_empty
+#gameid -1
+#type right_arm
+#type right_hand_slot
+#needstype right_arm humanoid
+#enditem
 
 #newitem
 #id left_arm_sweeping_fist
 #gameid sweeping_fist
 #type humanoid
 #type left_arm
-#type left_hand_slot
 #needstype left_arm humanoid
 #enditem
 
@@ -13,7 +27,6 @@
 #gameid sweeping_fist
 #type humanoid
 #type right_arm
-#type right_hand_slot
 #needstype right_arm humanoid
 #enditem
 

@@ -204,28 +204,40 @@
 #command "#comslave"
 #command "#gcost +15"
 #unitname "Communicant"
-#unitname "Sabbath Slave"
 #basechance 0
 #chanceinc magic astral 0.05
-#chanceinc magic blood 0.025
 #chanceinc "personalmagic astral -0.05"
-#chanceinc "personalmagic blood -0.025"
-#description "%unitname% is able to serve as a communion or sabbath slave."
+#description "%unitname% is able to serve as a communion slave."
 #notfortier 3
 #notfortier 2
 #filterdesc "comslave desc"
 #end
 
 #new
-#id "comslave chorus"
-#command "#comslave"
+#id "sabbathslave"
+#command "#sabbathslave"
+#command "#gcost +15"
+#unitname "Supplicant"
+#unitname "Sabbath Slave"
+#basechance 0
+#chanceinc magic blood 0.05
+#chanceinc "personalmagic blood -0.05"
+#description "is able to serve as a sabbath slave."
+#notfortier 3
+#notfortier 2
+#filterdesc "comslave desc"
+#end
+
+#new
+#id "chorusslave"
+#command "#chorusslave"
 #command "#spellsinger"
 #command "#gcost +15"
-#unitname "Chorus Singer"
 #unitname "Chanter"
+#unitname "Chorus Singer"
 #basechance 0
-#chanceinc magic glamour 0.0375
-#chanceinc "personalmagic glamour -0.0375"
+#chanceinc magic glamour 0.05
+#chanceinc "personalmagic glamour -0.05"
 #description "is able to serve as a chorus slave."
 #notfortier 3
 #notfortier 2
