@@ -1,3 +1,31 @@
+0.14.2 (13th August 2026)
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Multiple equipment fixes:
+		Fixed Fomorians using two-handed weapons and shields.
+		Grotesque hand slot error fixes.
+		Clockwork blade and hammer hands were not correctly copying the vanilla equivalents
+
+-	Fixed mod commands for Sabbath and Chorus communicant units.
+-	Fixed #rpcost calculations (again).
+-	Fixed #rpcost for cavalry whose mounts were not defined using #copystats, and thus were counting 0 RP cost for the mount themselves.
+-	Fixed custom weapons not generating at all.
+-	Fixed strength damage scaling of ranged weapons and enchanted ranged weapons.
+-	Fixed size of Asmegir (from 5 to 4, as in vanilla).
+
+-----------------------------------------------------------
+CHANGES
+-----------------------------------------------------------
+-	Sickly nationwide filter no longer applies to foulspawn.
+-	Updated the local database with the most recent Inspector version.
+-	Sacred and Elite units now have another info line in the .dm file which states the power that they rolled during generation.
+	This is the power that NationGen uses to grant filters, magic weapons and extra stats.
+-	Split foulspawn cavalry templates into centauroid and mounted cavalry separately. Having the same template yield either mounted
+	units or centauroids made sense in Dominions 5 where mounts were not a separate entity, but in Dominions 6 a centauroid behaves
+	very differently from a mounted unit.
+
+
 0.14.1 (23rd July 2026)
 -----------------------------------------------------------
 FIXES
