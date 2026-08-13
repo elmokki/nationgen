@@ -746,7 +746,7 @@ public class Unit {
   }
 
   public Boolean isSacred() {
-    return this.hasCommand("holy");
+    return this.hasCommand("#holy");
   }
 
   public Boolean isMounted() {
