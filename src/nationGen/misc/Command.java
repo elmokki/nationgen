@@ -37,8 +37,13 @@ public class Command {
     return Optional.of(type);
   }
 
-  public boolean isOfType(CommandType type) {
-    return this.getType().equals(Optional.of(type));
+  public boolean isOfType(List<CommandType> typesToMatch) {
+    Optional<CommandType> type = this.getType();
+    return typesToMatch.stream().anyMatch(t -> type.equals(Optional.ofNullable(t)));
+  }
+
+  public boolean isOfType(CommandType typeToMatch) {
+    return isOfType(List.of(typeToMatch));
   }
 
   public boolean sameTypeAs(Command other) {

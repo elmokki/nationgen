@@ -17,6 +17,11 @@
 -- way as armours or weapons. These mount item definitions are where the #id of the mount form is referenced,
 -- through the #command "#mountmnr '<mount_form_id>'" command.
 
+#new mount
+#id "montag_template_mount"
+#command "#name 'Template Mount'"
+#montagunit
+#end
 
 #new mount
 #id "vanara_bearer"
