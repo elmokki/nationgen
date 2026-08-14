@@ -1,0 +1,95 @@
+#newitem
+#id "javelin 1"
+#gameid 21
+#sprite /graphics/weapon/standard/javelin1.png
+#basechance 0.5
+#enditem
+
+#newitem
+#id "javelin 2"
+#gameid 21
+#basechance 0.5
+#sprite /graphics/weapon/standard/javelin2.png
+#enditem
+
+#newitem
+#id "throwing hatchet"
+#gameid throwinghatchet
+#basechance 1
+#chanceinc unittag irregular 4
+#theme "primitive"
+#theme "bronze"
+#enditem
+
+#newitem
+#id "bonus shortbow"
+#gameid 23
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#basechance 0.5
+#theme "wood"
+#enditem
+
+#newitem
+#id "poison shortbow"
+#gameid 594
+#sprite /graphics/weapon/standard/bonusshortbow.png
+#basechance 0.5
+#theme "wood"
+#theme "poison"
+#enditem
+
+#newitem
+#id "bonus sling"
+#gameid 22
+#basechance 3.5
+#theme "leather"
+#enditem
+
+#newitem
+#id "poison sling"
+#gameid 167
+#basechance 0.5
+#theme "leather"
+#theme "poison"
+#notepic
+#enditem
+
+#newitem
+#id "sticksandstones"
+#gameid 360
+#basechance 1
+#tag "notepic"
+#tag "maxprot 14"
+#theme "primitive"
+#enditem
+
+#newitem
+#id "harpoon"
+#gameid 452
+#sprite /graphics/weapon/standard/javelin1.png
+#tag "maxprot 14"
+#tag "tierunique"
+#basechance 0.5
+#chanceinc unittag irregular 1.5
+#enditem
+
+#newitem
+#id "blowpipe"
+#gameid 34
+#tag "maxprot 12"
+#tag "tierunique"
+#basechance 2.5
+#chanceinc unittag irregular 1.5
+#theme "poison"
+#notepic
+#enditem
+
+#newitem
+#id "heavy sling"
+#gameid heavy_sling
+#tag "name infantry 'Slinger'"
+#tag "maxprot 12"
+#tag "tierunique"
+#theme "primitive"
+#basechance 2
+#enditem

@@ -2,6 +2,8 @@
 #id hatchet
 #gameid 646
 #sprite /graphics/muuch/weapons/hatchet.png
+#offsetx 3
+#offsety 1
 #tag "eliteversion axe"
 #tag "name infantry warrior"
 #tag "name commander batab"
@@ -12,8 +14,8 @@
 #id axe
 #gameid 675
 #sprite /graphics/ichtyid/weapon/bronze_axe.png
-#offsetx -2
-#offsety 1
+#offsetx 1
+#offsety 2
 #tag "name infantry axeman"
 #tag "name commander batab"
 #theme "advanced"
@@ -26,6 +28,8 @@
 #id mace
 #gameid 12
 #sprite /graphics/muuch/weapons/mace.png
+#offsetx 3
+#offsety 1
 #tag "name infantry maceman"
 #tag "name commander chieftan"
 #enditem
@@ -35,6 +39,7 @@
 #gameid 373
 #sprite /graphics/muuch/weapons/spear.png
 #tag "eliteversion spear_elite"
+#offsety 1
 #tag "name infantry spearman"
 #tag "name infantry chieftan"
 #enditem
@@ -44,6 +49,7 @@
 #gameid 373
 #sprite /graphics/muuch/weapons/spear_elite.png
 #recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
+#offsety 1
 #tag "name infantry spearman"
 #tag "name commander chief"
 #theme "elite"
@@ -53,6 +59,7 @@
 #id bronzespear
 #gameid 643
 #sprite /graphics/muuch/weapons/bronzespear.png
+#offsety 1
 #theme "bronze"
 #tag "eliteversion spear_elite"
 #tag "name infantry spearman"
@@ -64,6 +71,7 @@
 #gameid 643
 #sprite /graphics/muuch/weapons/bronzespear_elite.png
 #recolormask /graphics/muuch/weapons/spear_elite_recolormask.png
+#offsety 1
 #theme "bronze"
 #tag "name infantry spearman"
 #tag "name commander chief"
@@ -85,6 +93,7 @@
 #basechance 0.5
 #gameid 680
 #sprite /graphics/muuch/weapons/trident.png
+#offsety 3
 #theme "bronze"
 #tag "eliteversion short_trident_elite"
 #enditem
@@ -95,6 +104,7 @@
 #gameid 641
 #sprite /graphics/muuch/weapons/trident.png
 #theme "bronze"
+#offsety 3
 #tag "eliteversion trident_elite"
 #enditem
 
@@ -105,7 +115,7 @@
 #recolormask /graphics/muuch/weapons/trident-elite_recolormask.png
 #theme "bronze"
 #offsetx -3
-#offsety -1
+#offsety 2
 #theme "elite"
 #enditem
 
@@ -116,7 +126,6 @@
 #recolormask /graphics/muuch/weapons/trident-elite_recolormask.png
 #theme "bronze"
 #offsetx -3
-#offsety -1
 #theme "elite"
 #enditem
 
@@ -124,6 +133,8 @@
 #id clubsword
 #gameid 451
 #sprite /graphics/muuch/weapons/clubsword_1h.png
+#offsetx 3
+#offsety 1
 #tag "name infantry swordsman"
 #tag "name commander swordsmaster"
 #theme "obsidian"
@@ -131,9 +142,11 @@
 
 #newitem
 #id obsidian_blade
-#basechance 0.25
+#basechance 0.5
 #gameid 625
 #sprite /graphics/muuch/weapons/obsidian_blade.png
+#offsetx 3
+#offsety 1
 #tag "eliteversion obsidian_blade_poisoned"
 #tag "name infantry swordsman"
 #tag "name commander bladesmaster"
@@ -143,9 +156,11 @@
 
 #newitem
 #id obsidian_blade_poisoned
-#basechance 0.125
+#basechance 0.5
 #gameid 623
 #sprite /graphics/muuch/weapons/obsidian_blade.png
+#offsetx 3
+#offsety 1
 #tag "name infantry swordsman"
 #tag "name commander bladesmaster"
 #theme "elite"
@@ -156,23 +171,30 @@
 #id great_clubsword
 #gameid 288
 #sprite /graphics/muuch/weapons/clubsword_2h.png
+#offsetx 3
+#offsety 2
+#basechance 8
 #tag "name infantry swordsman"
 #tag "name commander swordsmaster"
 #theme "obsidian"
+#theme "elite"
 #enditem
 
 #newitem
 #id great_club
 #gameid 165
-#sprite /graphics/muuch/weapons/greatclub.png
+#sprite /graphics/enlightened/naga/weapon/greatclub.png
+#offsety 5
 #tag "name infantry clubber"
 #theme "primitive"
+#basechance 1
 #enditem
 
 #newitem
 #id quarterstaff
 #gameid 7
 #sprite /graphics/muuch/weapons/quarterstaff.png
+#offsety 1
 #theme "primitive"
 #basechance 0.5
 #maxprot 10
@@ -186,15 +208,26 @@
 #tag "name commander batab"
 #theme "advanced"
 #theme "bronze"
+#theme "elite"
 #enditem
 
 #newitem
 #id glaive
 #gameid 673
-#sprite /graphics/agarthan/weapons/glaive.png
+#sprite /graphics/agarthan/weapons/glaive_bronze.png
 #offsetx -4
-#offsety -3
-#basechance 0.25
+#offsety -2
+#basechance 5.25
 #theme "advanced"
 #theme "bronze"
+#enditem
+
+#newitem
+#id sacred_cestus
+#gameid cestus
+#theme "sacred"
+#basechance 0.05
+#tag "guaranteedmagic"
+#needs offhand sacred_cestus_oh
+#basechance 0.33
 #enditem

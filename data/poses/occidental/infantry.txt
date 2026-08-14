@@ -1,0 +1,95 @@
+
+-- Normal infantry
+#newpose
+#id "occidentalinfantry"
+#role "infantry"
+#role "scout"
+#basechance 10
+
+#dwchancebonus 0.25
+
+#renderorder "shadow basesprite shirt armor pants weapon bonusweapon offhandw hands offhanda helmet"
+
+#load basesprite /data/items/races/occidental/bases.txt
+#load shadow /data/items/races/occidental/shadow.txt
+#load hands /data/items/races/occidental/hands.txt -3 4
+#load shirt /data/items/races/occidental/shirt.txt
+#load armor /data/items/races/occidental/armor.txt
+#load pants /data/items/races/occidental/pants.txt
+#load helmet /data/items/races/occidental/helmet.txt
+#load weapon /data/items/races/occidental/weapon.txt
+#load bonusweapon /data/items/races/occidental/bonusranged.txt
+#load offhand /data/items/races/occidental/shield.txt
+#load offhand /data/items/races/occidental/offhand.txt
+
+#generateitem 1 shirt
+
+#endpose
+
+-- Elite warrior societies (cf Moon Warriors)
+--#newpose
+--#id "society elites"
+--#role "elite infantry"
+
+--#renderorder "shadow basesprite shirt armor weapon bonusweapon offhandw hands offhanda"
+
+--#load basesprite /data/items/races/occidental/warriorsociety/bases_elite.txt
+--#load shadow /data/items/races/occidental/shadow.txt
+--#load hands /data/items/races/occidental/hands.txt
+--#load shirt /data/items/races/occidental/warriorsociety/shirt.txt
+--#load armor /data/items/races/occidental/warriorsociety/armor.txt
+--#load helmet /data/items/races/occidental/warriorsociety/helmet.txt
+--#load weapon /data/items/races/occidental/warriorsociety/weapon.txt
+--#load bonusweapon /data/items/races/occidental/warriorsociety/bonusranged.txt
+--#load offhand /data/items/races/occidental/warriorsociety/shields.txt
+
+--#load society /data/items/races/occidental/warriorsociety/society.txt
+
+--#endpose
+
+-- Sacred warrior societies (cf Jaguar/Sun Warriors)
+--#newpose
+--#id "society sacreds"
+--#role "sacred infantry"
+
+--#renderorder "shadow basesprite shirt armor weapon bonusweapon offhandw hands offhanda"
+
+--#load basesprite /data/items/races/occidental/warriorsociety/bases_sacred.txt
+--#load shadow /data/items/races/occidental/shadow.txt
+--#load hands /data/items/races/occidental/hands.txt
+--#load shirt /data/items/races/occidental/warriorsociety/shirt.txt
+--#load armor /data/items/races/occidental/warriorsociety/armor.txt
+--#load helmet /data/items/races/occidental/warriorsociety/helmet.txt
+--#load weapon /data/items/races/occidental/warriorsociety/weapon.txt
+--#load bonusweapon /data/items/races/occidental/warriorsociety/bonusranged.txt
+--#load offhand /data/items/races/occidental/warriorsociety/shields.txt
+
+--#load society /data/items/races/occidental/warriorsociety/society.txt
+
+--#endpose
+
+
+
+-- Sacred flying warrior societies (cf Eagle Warriors)
+--#newpose
+--#id "flying society sacreds"
+--#role "sacred infantry"
+
+--#renderorder "shadow underlay basesprite shirt armor weapon bonusweapon offhandw hands offhanda overlay"
+
+--#load basesprite /data/items/races/occidental/warriorsociety/bases_flying.txt
+--#load shadow /data/items/races/occidental/shadow.txt
+--#load hands /data/items/races/occidental/hands.txt
+--#load underlay /data/items/races/occidental/warriorsociety/underlay.txt
+--#load overlay /data/items/races/occidental/warriorsociety/overlay.txt
+--#load shirt /data/items/races/occidental/warriorsociety/shirt.txt
+--#load armor /data/items/races/occidental/warriorsociety/armor.txt
+--#load helmet /data/items/races/occidental/warriorsociety/helmet.txt
+--#load weapon /data/items/races/occidental/warriorsociety/weapon.txt
+--#load bonusweapon /data/items/races/occidental/warriorsociety/bonusranged.txt
+--#load offhand /data/items/races/occidental/warriorsociety/offhand.txt
+
+--#maxunits 1
+--#maxposes 1
+
+--#endpose

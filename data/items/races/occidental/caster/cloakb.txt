@@ -1,0 +1,31 @@
+#newitem
+#id "nekkid"
+#gameid -1
+#armor
+#tag "tier 1"
+#needs cloakf nekkid
+#enditem
+
+#newitem
+#id "cloak"
+#gameid -1
+#armor
+#sprite /graphics/cloaks/standard/cloak6_b.png
+#recolormask /graphics/cloaks/standard/cloak6_b.png
+#tag "tier 2"
+#offsetx -2
+#offsety -2
+#needs cloakf cloak
+#enditem
+
+#newitem
+#id "cloak_tinted"
+#gameid -1
+#armor
+#sprite /graphics/cloaks/standard/cloak6_b.png
+#recolormask /graphics/cloaks/standard/cloak6_b.png
+#tag "tier 3"
+#offsetx -2
+#offsety -2
+#needs cloakf cloak_tinted
+#enditem

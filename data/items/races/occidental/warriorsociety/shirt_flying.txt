@@ -1,0 +1,20 @@
+--- Nekkid
+
+#newitem
+#id "nekkid"
+#gameid -1
+#armor
+#theme "primitive"
+#theme "naked"
+#needs pants loincloth
+#enditem
+
+#newitem
+#id "cuirass"
+#gameid -1
+#armor
+#sprite /graphics/occidental/armor/cuirass_leather.png
+#recolormask /graphics/occidental/armor/cuirass_leather_recolormask.png
+#basechance 0
+#needs pants nekkid
+#enditem
