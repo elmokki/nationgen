@@ -1,6 +1,7 @@
 #newitem
 #id "humanoid"
 #gameid -1
+#basechance 4
 #sprite /graphics/foulspawn/grotesque/torsos/humanoid_torso.png
 #command "#gcost 82"
 #command "#hp 58"
@@ -19,6 +20,7 @@
 #command "#fireres 5"
 #command "#poisonres 5"
 #command "#shockres 5"
+#command "#humanoid"
 #type humanoid
 #enditem
 
@@ -45,6 +47,7 @@
 #command "#coldres +15"
 #command "#cold +6"
 #command "#coldpower +1"
+#command "#humanoid"
 #type niefel
 #type humanoid
 #theme boreal

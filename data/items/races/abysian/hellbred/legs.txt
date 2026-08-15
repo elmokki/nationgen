@@ -20,6 +20,7 @@
 #define "#rcost +2"
 #define "#fireres +10"
 #define "#heat +3"
+#define "#humanoid"
 #define "#maxage *0.9"
 #enditem
 
@@ -42,6 +43,7 @@
 #define "#enc 3"
 #define "#rcost +1"
 #define "#fireres +5"
+#define "#humanoid"
 #define "#maxage *0.9"
 #enditem
 
@@ -62,12 +64,12 @@
 #define "#ressize 3"
 #define "#enc 0"
 #define "#rcost +2"
-#define "#darkvision 50"
 #define "#poisonres +10"
 #define "#corpseeater 2"
 #define "#deadhp 1"
 #define "#maxdeadhp 6"
 #define "#almostundead"
+#define "#humanoid"
 #define "#maxage *1.25"
 #enditem
 
@@ -96,6 +98,7 @@
 #define "#heat +3"
 #define "#weapon 68"
 #define "#almostundead"
+#define "#humanoid"
 #define "#maxage *1.1"
 #enditem
 
@@ -122,6 +125,7 @@
 #define "#fireres +5"
 #define "#weapon 68"
 #define "#almostundead"
+#define "#humanoid"
 #define "#maxage *1.1"
 #enditem
 
@@ -148,6 +152,7 @@
 #define "#poisonarmor 8"
 #define "#weapon 68"
 #define "#almostundead"
+#define "#humanoid"
 #define "#maxage *1.2"
 #enditem
 
@@ -176,6 +181,7 @@
 #define "#animal"
 #tag "animal worm"
 #define "#maxage *0.75"
+#define "#mountedhumanoid"
 #define "#lanceok"
 #enditem
 
@@ -203,6 +209,7 @@
 #define "#swimming"
 #define "#poisonres +10"
 #tag "animal worm"
+#define "#naga"
 #define "#maxage *1.1"
 #define "#lanceok"
 #enditem
@@ -227,11 +234,11 @@
 #define "#enc 2"
 #define "#rcost +6"
 #define "#wastesurvival"
-#define "#darkvision 100"
 #define "#poisonres +15"
 #define "#weapon 273"
 #define "#weapon 423"
 #tag "animal scorpion"
+#define "#mountedhumanoid"
 #define "#maxage *0.8"
 #define "#lanceok"
 #enditem

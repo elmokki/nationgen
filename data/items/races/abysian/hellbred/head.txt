@@ -11,6 +11,7 @@
 #command "#def +0"
 #command "#prec -2"
 #command "#ap -2"
+#command "#darkvision 50"
 #command "#fireres +5"
 #itemslot head +1
 #needs headweapon normal
@@ -29,6 +30,7 @@
 #command "#def +0"
 #command "#prec -1"
 #command "#ap +1"
+#command "#darkvision 50"
 #itemslot head +1
 #needs headweapon normal
 #enditem
@@ -46,11 +48,14 @@
 #command "#def +0"
 #command "#prec -2"
 #command "#ap +2"
+#command "#darkvision 50"
 #command "#fireres +5"
 #command "#heat +3"
 #command "#firepower +1"
 #type barehead
 #needs helmet barehead
+#command "#humanoid"
+#command "#itemslots +16785408"
 #needstype headweapon fire
 #enditem
 
@@ -67,9 +72,12 @@
 #command "#def +0"
 #command "#prec -2"
 #command "#ap +2"
+#command "#darkvision 50"
 #command "#fireres +5"
 #type barehead
 #needs helmet barehead
+#command "#humanoid"
+#command "#itemslots +16785408"
 #needs headweapon bite
 #enditem
 
@@ -86,9 +94,12 @@
 #command "#def +0"
 #command "#prec -2"
 #command "#ap +2"
+#command "#darkvision 50"
 #command "#poisonres +5"
 #type barehead
 #needs helmet barehead
+#command "#humanoid"
+#command "#itemslots +16785408"
 #needstype headweapon poison
 #enditem
 
@@ -106,10 +117,13 @@
 #command "#prec -2"
 #command "#firepower +1"
 #command "#ap +2"
+#command "#darkvision 50"
 #command "#fireres +5"
 #command "#poisonres +5"
 #command "#heat +3"
 #type barehead
 #needs helmet barehead
+#command "#humanoid"
+#command "#itemslots +16785408"
 #needstype headweapon fire
 #enditem
