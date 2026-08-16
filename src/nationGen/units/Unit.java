@@ -606,20 +606,31 @@ public class Unit {
   }
 
   public int getItemSlots() {
-    Command existingItemslots = this.getHandledCommand("#itemslots");
+    int encodedSlots;
     HashMap<DominionsItemSlot, Integer> existingItemslotsMap;
     HashMap<DominionsItemSlot, Integer> itemslots;
-    int encodedSlots;
+    List<Command> existingItemslots = this.gatherCommands().stream()
+      .filter(c -> c.isOfType(CommandType.ITEMSLOTS))
+      .toList();
+
+    if (this.polished == true && existingItemslots.size() > 1) {
+      return existingItemslots.getFirst().args.getInt(0);
+    }
+
+    while(existingItemslots.size() > 1) {
+      Command command = existingItemslots.removeLast();
+      this.handleCommand(existingItemslots, command);
+    }
     
-    if (existingItemslots != null && !existingItemslots.hasCombinatoryArgs()) {
-      itemslots = DominionsItemSlots.decode(existingItemslots.args.getInt(0));
+    if (!existingItemslots.isEmpty() && !existingItemslots.getFirst().hasCombinatoryArgs()) {
+      itemslots = DominionsItemSlots.decode(existingItemslots.getFirst().args.getInt(0));
     }
 
     else {
       Tags itemTags = new Tags();
       Tags unitTags = Generic.getAllUnitTags(this);
       Item basesprite = this.slotmap.get("basesprite");
-      int existingItemslotsValue = (existingItemslots == null ? 0 : existingItemslots.args.getInt(0));
+      int existingItemslotsValue = (existingItemslots.isEmpty() ? 0 : existingItemslots.getFirst().args.getInt(0));
 
       existingItemslotsMap = DominionsItemSlots.decode(existingItemslotsValue);
       itemslots = DominionsItemSlots.add(
@@ -1698,7 +1709,8 @@ public class Unit {
     Item weapon = unit.getSlot("weapon");
     Item offhand = unit.getSlot("offhand");
     List<CommandType> handledCommandTypesToIgnore = List.of(
-      CommandType.RPCOST
+      CommandType.RPCOST,
+      CommandType.ITEMSLOTS
     );
 
     handleLowEncCommandPolish(unit.pose.tags);
@@ -1788,7 +1800,12 @@ public class Unit {
       }
     }
 
-    /* Cost calculation */
+    // Determine the final itemslots
+    int itemslots = this.getItemSlots();
+    Command finalItemslotsCommand = CommandFactory.create(CommandType.ITEMSLOTS.toString(), new Arg(itemslots));
+    polishedCommands.add(finalItemslotsCommand);
+
+    // Final gcost calculation
     int gcost = this.getGoldCost(false);
     gcost = Unit.roundGoldPerDominionsRules(gcost);
 

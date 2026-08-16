@@ -2,6 +2,7 @@ package nationGen.misc;
 
 public enum CommandType {
     CUSTOMMAGIC("#custommagic", true),
+    ITEMSLOTS("#itemslots", false),
     MAGICBOOST("#magicboost", true),
     MAGICSKILL("#magicskill", true),
     GCOST("#gcost", false),
