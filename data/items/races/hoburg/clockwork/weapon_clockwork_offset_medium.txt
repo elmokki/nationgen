@@ -1,0 +1,241 @@
+#newitem
+#id axe
+#gameid 17
+#sprite /graphics/weapon/standard/axe.png
+#theme "iron"
+#theme "primitive"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id broadsword
+#gameid 8
+#sprite /graphics/weapon/standard/broadsword.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/weapon/standard/flail.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id greataxe
+#gameid 18
+#sprite /graphics/weapon/standard/greataxe.png
+#theme "iron"
+#theme "primitive"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id halberd
+#gameid 5
+#sprite /graphics/weapon/standard/halberd.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme "advanced"
+#itemslot hand +2
+#needs offhand nooffhand
+#minprot 8
+#enditem
+
+#newitem
+#id bardiche
+#gameid 257
+#sprite /graphics/weapon/standard/bardiche.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id hammer
+#gameid 13
+#sprite /graphics/weapon/standard/hammer.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id lucernehammer
+#gameid lucernehammer
+#sprite /graphics/weapon/standard/lucernehammer.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "advanced"
+#theme formationfighter
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id longspear
+#gameid 28
+#sprite /graphics/weapon/standard/longspear.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme formationfighter
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id mace
+#gameid 12
+#sprite /graphics/weapon/standard/mace.png
+#theme "primitive"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#maxprot 15
+#chanceinc unittag irregular 8
+#itemslot hand +1
+#enditem
+
+#newitem
+#id maul
+#gameid 14
+#sprite /graphics/weapon/standard/maul.png
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id morningstar
+#gameid 15
+#sprite /graphics/weapon/standard/morningstar.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id shortsword
+#gameid 6
+#sprite /graphics/weapon/standard/shortsword.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id kopesh
+#gameid ironkopesh
+#sprite /graphics/weapon/standard/kopesh_iron.png
+#theme "iron"
+#theme "austral"
+#theme "oriental"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id short_trident
+#gameid 679
+#sprite /graphics/weapon/standard/trident.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#tag "prefix trident"
+#basechance 0.25
+#theme formationfighter
+#itemslot hand +1
+#enditem
+
+#newitem
+#id trident
+#gameid 3
+#sprite /graphics/weapon/standard/trident.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#tag "prefix trident"
+#basechance 0.25
+#theme formationfighter
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id spetum
+#gameid 639
+#sprite /graphics/weapon/standard/spetum.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#tag "prefix spetum"
+#basechance 0.25
+#theme formationfighter
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id pike
+#gameid 2
+#sprite /graphics/weapon/standard/pike.png
+#theme "iron"
+#theme "austral"
+#theme "boreal"
+#theme "central"
+#theme "occidental"
+#theme formationfighter
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem
+
+#newitem
+#id flail
+#gameid 16
+#sprite /graphics/abysian/weapons/flail.png
+#theme "iron"
+#theme "abysian"
+#itemslot hand +2
+#needs offhand nooffhand
+#enditem

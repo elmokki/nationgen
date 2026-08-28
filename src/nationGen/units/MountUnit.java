@@ -16,6 +16,7 @@ import nationGen.items.Item;
 import nationGen.misc.Arg;
 import nationGen.misc.Command;
 import nationGen.misc.CommandFactory;
+import nationGen.misc.CommandType;
 import nationGen.misc.FileUtil;
 import nationGen.naming.Name;
 import nationGen.naming.NamePart;
@@ -205,6 +206,10 @@ public class MountUnit extends Unit {
   }
 
   public void polish(NationGen n, Nation nation) {
+    if (this.polished) {
+      return;
+    }
+
     Filter polishFilter = new Filter(n);
     List<Command> polishedCommands = new ArrayList<>();
     polishFilter.name = "Mount unit";
@@ -451,5 +456,23 @@ public class MountUnit extends Unit {
     lines.add("");
 
     return lines;
+  }
+
+  @Override
+  protected Optional<String> writeBodytypeLine() {
+    for (DominionsBodyType bodyType : DominionsBodyType.values()) {
+      if (this.hasCommand(bodyType.toModCommand())) {
+        return Optional.empty();
+      }
+    }
+
+    if (this.hasCommand(CommandType.COPYSTATS.toString())) {
+      return Optional.empty();
+    }
+
+    int slots = this.getItemSlots();
+    DominionsBodyType bodytype = DominionsBodyType.fromItemslots(slots, false);
+    String bodytypeCommand = bodytype.toModCommand();
+    return Optional.of(bodytypeCommand);
   }
 }

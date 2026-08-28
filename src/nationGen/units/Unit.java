@@ -553,50 +553,22 @@ public class Unit {
     this.id = this.nationGen.getNextUnitId();
   }
 
-  // Decides on bodytype tags based on the itemslots of the unit (see #itemslots in modding manual for the bitmask table of values)
   protected Optional<String> writeBodytypeLine() {
-    String[] coms = {
-      "#lizard",
-      "#quadruped",
-      "#bird",
-      "#snake",
-      "#djinn",
-      "#miscshape",
-      "#humanoid",
-      "#mountedhumanoid",
-      "#troglodyte",
-      "#naga",
-      "#copystats",
-    };
-    for (String str : coms) if (this.hasCommand(str)) {
+    for (DominionsBodyType bodyType : DominionsBodyType.values()) {
+      if (this.hasCommand(bodyType.toModCommand())) {
+        return Optional.empty();
+      }
+    }
+
+    if (this.hasCommand(CommandType.COPYSTATS.toString())) {
       return Optional.empty();
     }
 
     int slots = this.getItemSlots();
-
-    // has feet and an arm
-    if (
-      Generic.containsBitmask(slots, 131072) &&
-      Generic.containsBitmask(slots, 2)
-    ) {
-      // has head
-      if (Generic.containsBitmask(slots, 8192)) return Optional.of("#humanoid");
-      else return Optional.of("#troglodyte");
-    }
-    // no feet, but arm
-    else if (Generic.containsBitmask(slots, 2)) {
-      Boolean mounted = this.getSlot("mount") != null;
-      if (mounted) return Optional.of("#mountedhumanoid");
-      else return Optional.of("#naga");
-    }
-    // feet, no arm
-    else if (Generic.containsBitmask(slots, 131072)) {
-      return Optional.of("#quadruped");
-    }
-    // no feet nor arm
-    else {
-      return Optional.of("#miscshape");
-    }
+    boolean isMounted = this.isMounted();
+    DominionsBodyType bodytype = DominionsBodyType.fromItemslots(slots, isMounted);
+    String bodytypeCommand = bodytype.toModCommand();
+    return Optional.of(bodytypeCommand);
   }
 
   public int getHandSlots() {
@@ -611,7 +583,9 @@ public class Unit {
     HashMap<DominionsItemSlot, Integer> itemslots;
     List<Command> existingItemslots = this.gatherCommands().stream()
       .filter(c -> c.isOfType(CommandType.ITEMSLOTS))
-      .toList();
+      // Copy the commands to avoid mutating original ones
+      .map(c -> new Command(c))
+      .collect(Collectors.toList());
 
     if (this.polished == true && existingItemslots.size() > 1) {
       return existingItemslots.getFirst().args.getInt(0);
@@ -630,13 +604,16 @@ public class Unit {
       Tags itemTags = new Tags();
       Tags unitTags = Generic.getAllUnitTags(this);
       Item basesprite = this.slotmap.get("basesprite");
+      List<Args> baseitemslotTags = unitTags.getAllArgs("baseitemslot");
       int existingItemslotsValue = (existingItemslots.isEmpty() ? 0 : existingItemslots.getFirst().args.getInt(0));
-
+      
+      // #baseitemslot tags will override the base amount of slots
+      HashMap<DominionsItemSlot, Integer> baseItemslots = DominionsItemSlots.defaultSlots(baseitemslotTags);
       existingItemslotsMap = DominionsItemSlots.decode(existingItemslotsValue);
       itemslots = DominionsItemSlots.add(
         List.of(
           existingItemslotsMap,
-          DominionsItemSlots.defaultSlots()
+          baseItemslots
         )
       );
 
@@ -647,15 +624,6 @@ public class Unit {
       this.slotmap.items()
         .filter(i -> i != basesprite)
         .forEach(i -> itemTags.addAll(i.tags));
-
-      // #baseitemslot tags will override the base amount of slots
-      for (Args args : unitTags.getAllArgs("baseitemslot")) {
-        String slotName = args.getFirst().get();
-        DominionsItemSlot slot = DominionsItemSlot.fromString(slotName);
-        Arg modifier = args.get(1);
-        int newAmount = Generic.handleModifier(modifier, itemslots.get(slot));
-        itemslots.put(slot, newAmount);
-      }
 
       // Seearch for #itemslot tags that modifies each specific slot
       for (Args args : itemTags.getAllArgs("itemslot")) {
@@ -1337,6 +1305,9 @@ public class Unit {
       totalCost *= sacredMultiplier;
       totalCost *= slowRecMultiplier;
     }
+
+    // Unit gcost
+    totalCost = Math.max(totalCost, 1);
 
     if (includeMountCost == true) {
       totalCost += this.getMountGoldCost();

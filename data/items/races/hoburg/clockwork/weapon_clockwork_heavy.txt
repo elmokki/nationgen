@@ -5,6 +5,7 @@
 #offsetx -2
 #offsety -15
 #theme "primitive"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -14,6 +15,7 @@
 #offsetx -2
 #offsety -15
 #theme "primitive"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -22,6 +24,7 @@
 #sprite /graphics/avvim/weapon/morningstar.png
 #offsetx -2
 #offsety -15
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -30,6 +33,7 @@
 #sprite /graphics/avvim/weapon/broadsword.png
 #offsetx -2
 #offsety -16
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -38,13 +42,15 @@
 #sprite /graphics/avvim/weapon/falchion.png
 #offsetx -2
 #offsety -16
+#itemslot hand +1
 #enditem
 
 #newitem
-#id claymore
+#id giants_claymore
 #gameid giants_claymore
 #sprite /graphics/highmen/weapons/oversized/greatsword.png
 #ignore_dw_restrictions
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -54,6 +60,7 @@
 #offsetx 6
 #offsety -9
 #theme "advanced"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -62,6 +69,7 @@
 #sprite /graphics/highmen/weapons/flail.png
 #offsetx 0
 #offsety -13
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -71,6 +79,7 @@
 #offsetx 0
 #offsety -13
 #theme "primitive"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -80,4 +89,5 @@
 #offsetx 0
 #offsety -13
 #theme "primitive"
+#itemslot hand +1
 #enditem

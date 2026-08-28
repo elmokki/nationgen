@@ -4,6 +4,7 @@
 #sprite /graphics/hoburg/weapon/spear.png
 #offsetx -2
 #offsety -6
+#itemslot hand +1
 #theme "wood"
 #enditem
 
@@ -13,6 +14,8 @@
 #sprite  /graphics/hoburg/weapon/naginata.png
 #offsetx -2
 #offsety -6
+#itemslot hand +2
+#needs offhand nooffhand
 #theme "iron"
 #enditem
 
@@ -22,6 +25,8 @@
 #sprite /graphics/hoburg/weapon/longspear.png
 #offsetx -2
 #offsety -6
+#itemslot hand +2
+#needs offhand nooffhand
 #theme "wood"
 #enditem
 
@@ -31,6 +36,8 @@
 #sprite /graphics/hoburg/weapon/pike.png
 #offsetx -2
 #offsety -6
+#itemslot hand +2
+#needs offhand nooffhand
 #theme "wood"
 #theme "advanced"
 #enditem
@@ -41,6 +48,7 @@
 #sprite /graphics/hoburg/weapon/wakizasi.png
 #offsetx -2
 #offsety -6
+#itemslot hand +1
 #theme "iron"
 #enditem
 
@@ -50,6 +58,7 @@
 #sprite /graphics/hoburg/weapon/ninjato.png
 #offsetx -2
 #offsety -6
+#itemslot hand +1
 #theme "iron"
 #enditem
 
@@ -60,6 +69,7 @@
 #tag "name infantry falchioneer"
 #offsetx 1
 #offsety 5
+#itemslot hand +1
 #theme "iron"
 #enditem
 
@@ -69,6 +79,8 @@
 #sprite /graphics/hoburg/weapon/katana.png
 #offsetx -2
 #offsety -6
+#itemslot hand +2
+#needs offhand nooffhand
 #theme "iron"
 #theme "advanced"
 #enditem
@@ -79,8 +91,7 @@
 #tag "name infantry reaper"
 #needs offhand offhandbladehand
 #needs hands bladehands
--- head & 2 misc
-#define "#itemslots 794624"
 #theme "iron"
 #theme "advanced"
+#itemslot bow -1
 #enditem

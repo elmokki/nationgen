@@ -4,8 +4,7 @@
 #gameid 357
 #sprite /graphics/hoburg/weapon/clockwork_lance.png
 #ignore_dw_restrictions
--- One hand
-#define "#itemslots +2"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -15,8 +14,8 @@
 #ignore_dw_restrictions
 #offsetx -2
 #offsety -11
--- Two hands
-#define "#itemslots +6"
+#itemslot hand +2
+#needs offhand nooffhand
 #enditem
 
 #newitem
@@ -26,8 +25,8 @@
 #ignore_dw_restrictions
 #offsetx -2
 #offsety -11
--- Two hands
-#define "#itemslots +6"
+#itemslot hand +2
+#needs offhand nooffhand
 #enditem
 
 #newitem
@@ -36,8 +35,7 @@
 #sprite /graphics/weapon/standard/falchion.png
 #offsetx 0
 #offsety -5
--- One hand
-#define "#itemslots +2"
+#itemslot hand +1
 #enditem
 
 
@@ -49,9 +47,8 @@
 #sprite /graphics/weapon/standard/longspear.png
 #offsetx -1
 #offsety -7
+#itemslot hand +2
 #needs offhand nooffhand
--- Two hands
-#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -60,9 +57,7 @@
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -1
 #offsety -7
-#needs offhand nooffhand
--- Two hands
-#define "#itemslots +6"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -71,9 +66,8 @@
 #sprite /graphics/weapon/standard/spear.png
 #offsetx -1
 #offsety -7
+#itemslot hand +2
 #needs offhand nooffhand
--- Two hands
-#define "#itemslots +6"
 #enditem
 
 #newitem
@@ -82,7 +76,6 @@
 #sprite /graphics/tengu/weapons/naginata.png
 #offsetx -1
 #offsety -7
+#itemslot hand +2
 #needs offhand nooffhand
--- Two hands
-#define "#itemslots +6"
 #enditem

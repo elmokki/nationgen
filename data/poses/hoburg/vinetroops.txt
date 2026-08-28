@@ -18,7 +18,7 @@
 
 #dwchancebonus 0.9
 
-#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
+#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver specialslot bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/races/hoburg/vines/bases_vine.txt 0 0
 #load shadow /data/items/races/hoburg/vines/shadow_vine.txt 0 -3
@@ -34,12 +34,8 @@
 #load specialweapon /data/items/races/hoburg/vines/specialweapon_vine.txt 0 0
 #load offhand /data/items/races/hoburg/vines/offhand_vine.txt -3 -10
 #load offhand /data/items/races/hoburg/vines/shield_vine.txt -3 -10
-
-
-#load handslots /data/items/races/hoburg/vines/handslots_vine.txt
 #load specialslot /data/items/races/hoburg/vines/specialslots_vine.txt
 
-#generateitem 1 handslots -- used to define commander hand slots
 #generateitem 1 specialslot
 
 #endpose
@@ -62,7 +58,7 @@
 
 #dwchancebonus 0.9
 
-#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
+#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver specialslot bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/races/hoburg/vines/bases_vine.txt 0 0
 #load shadow /data/items/races/hoburg/vines/shadow_vine.txt 0 -3
@@ -78,11 +74,8 @@
 #load specialweapon /data/items/races/hoburg/vines/specialweapon_vine.txt 0 0
 #load offhand /data/items/races/hoburg/vines/offhand_vine.txt -3 -10
 #load offhand /data/items/races/hoburg/vines/shield_vine.txt -3 -10
-
-#load handslots /data/items/races/hoburg/vines/handslots_vine.txt
 #load specialslot /data/items/races/hoburg/vines/specialslots_vine.txt
 
-#generateitem 1 handslots -- used to define commander hand slots
 #generateitem 0.2 specialslot
 
 #maxvarieties 2
@@ -109,7 +102,7 @@
 #theme "imperial"
 #theme "abysian"
 
-#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
+#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver specialslot bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/races/hoburg/vines/bases_vine.txt
 #load shadow /data/items/races/hoburg/vines/shadow_vine.txt
@@ -124,11 +117,8 @@
 #load specialweapon /data/items/races/hoburg/vines/specialweapon_vine.txt
 #load offhand /data/items/races/hoburg/vines/offhand_vine.txt 0 -5
 #load offhand /data/items/races/hoburg/vines/shield_vine.txt 0 -5
-
-#load handslots /data/items/races/hoburg/vines/handslots_vine.txt
 #load specialslot /data/items/races/hoburg/vines/specialslots_vine.txt
 
-#generateitem 1 handslots -- used to define commander hand slots
 #generateitem 1 specialslot
 
 #endpose
@@ -149,7 +139,7 @@
 #theme "imperial"
 #theme "abysian"
 
-#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver bonusweapon weapon offhandw hands offhanda overlay"
+#renderorder "shadow cloakb mount basesprite hair shirt legs helmet armor cloakf quiver specialslot bonusweapon weapon offhandw hands offhanda overlay"
 
 #load basesprite /data/items/races/hoburg/vines/bases_vine.txt
 #load shadow /data/items/races/hoburg/vines/shadow_vine.txt
@@ -164,11 +154,8 @@
 #load specialweapon /data/items/races/hoburg/vines/specialweapon_vine.txt
 #load offhand /data/items/races/hoburg/vines/offhand_vine.txt 0 -5
 #load offhand /data/items/races/hoburg/vines/shield_vine.txt 0 -5
-
-#load handslots /data/items/races/hoburg/vines/handslots_vine.txt
 #load specialslot /data/items/races/hoburg/vines/specialslots_vine.txt
 
-#generateitem 1 handslots -- used to define commander hand slots
 #generateitem 0.2 specialslot
 
 #maxvarieties 2

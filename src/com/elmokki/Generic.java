@@ -3,7 +3,6 @@ package com.elmokki;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -257,13 +256,24 @@ public class Generic {
   }
 
   public static int handleModifier(Arg mod, int value) {
-    Optional<Operator> operator = mod.getOperator();
-    if (
-      operator.isPresent() &&
-      (operator.get() == Operator.ADD || operator.get() == Operator.SUBTRACT)
-    ) {
-      value += mod.getInt();
-    } else value = mod.getInt();
+    int modifierValue = mod.getInt();
+    Operator operator = mod.getOperator().orElse(Operator.SET);
+
+    if (operator.equals(Operator.ADD) || operator.equals(Operator.SUBTRACT)) {
+      value += modifierValue;
+    }
+
+    else if (operator.equals(Operator.MULTIPLY)) {
+      value *= (double)modifierValue;
+    }
+
+    else if (operator.equals(Operator.DIVIDE)) {
+      value /= (double)modifierValue;
+    }
+    
+    else {
+      value = modifierValue;
+    }
 
     return value;
   }

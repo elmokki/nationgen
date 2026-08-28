@@ -24,6 +24,12 @@
 #load weapon /data/items/races/hoburg/clockwork/oriental/weapon_clockwork_light.txt
 #load offhand /data/items/races/hoburg/clockwork/oriental/offhand_clockwork_light.txt
 
+#baseitemslot head 1
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot hand 0
+#baseitemslot bow 1
+
 #endpose
 
 ---- Light clockwork troop
@@ -49,6 +55,12 @@
 
 #load weapon /data/items/races/hoburg/clockwork/oriental/weapon_clockwork_light.txt
 #load offhand /data/items/races/hoburg/clockwork/oriental/offhand_clockwork_light.txt
+
+#baseitemslot head 1
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot hand 0
+#baseitemslot bow 1
 
 #maxvarieties 2
 #maxunits 1
@@ -85,7 +97,6 @@
 #load offhand /data/items/races/hoburg/clockwork/oriental/offhand_clockwork_medium.txt
 
 #load headslot /data/items/races/hoburg/clockwork/headslots_clockwork_medium.txt
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_medium.txt
 #load specialslot /data/items/races/hoburg/clockwork/oriental/specialslots_clockwork_medium.txt
 
 -- slots generated here are given through items; this pattern is used to be able to generate
@@ -94,6 +105,11 @@
 
 -- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 1 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot bow 0
 
 #endpose
 
@@ -125,7 +141,6 @@
 #load offhand /data/items/races/hoburg/clockwork/oriental/offhand_clockwork_medium.txt
 
 #load headslot /data/items/races/hoburg/clockwork/headslots_clockwork_medium.txt
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_medium.txt
 #load specialslot /data/items/races/hoburg/clockwork/oriental/specialslots_clockwork_medium.txt
 
 -- slots generated here are given through items; this pattern is used to be able to generate
@@ -134,6 +149,11 @@
 
 -- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 0.2 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot bow 0
 
 #maxvarieties 2
 #maxunits 1
@@ -171,10 +191,15 @@
 
 #load offhand /data/items/races/hoburg/clockwork/oriental/offhand_clockwork_heavy.txt
 
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_heavy.txt
 #load specialslot /data/items/races/hoburg/clockwork/oriental/specialslots_clockwork_heavy.txt
 
 #additionalweaponslot 1 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot misc 3
+#baseitemslot hand 0
+#baseitemslot bow 0
 
 #endpose
 
@@ -224,9 +249,13 @@
 
 #load offhand /data/items/races/hoburg/clockwork/oriental/offhand_clockwork_colossal.txt
 
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_heavy.txt
 #load specialslot /data/items/races/hoburg/clockwork/oriental/specialslots_clockwork_colossal.txt
 
 #additionalweaponslot 1 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot hand 0
+#baseitemslot misc 4
 
 #endpose

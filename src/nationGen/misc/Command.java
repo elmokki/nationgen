@@ -114,15 +114,24 @@ public class Command {
 
   public Arg combineArgs(Arg modifierArg, Arg baseArg) {
     // By default, if no specific operator is given, set the value of this command
-    Operator operator = modifierArg.getOperator().orElse(Operator.SET);
+    Operator modifierOperator = modifierArg.getOperator().orElse(Operator.SET);
+    Operator baseOperator = baseArg.getOperator().orElse(Operator.SET);
     Arg combinedValue = new Arg(modifierArg.get());
 
-    if (operator == Operator.ADD || operator == Operator.SUBTRACT) {
+    if (modifierOperator == Operator.ADD || modifierOperator == Operator.SUBTRACT) {
       combinedValue = this.addArg(modifierArg, baseArg);
     }
     
-    else if (operator == Operator.MULTIPLY) {
+    else if (modifierOperator == Operator.MULTIPLY) {
       combinedValue = this.multiplyArg(modifierArg, baseArg);
+    }
+
+    if (baseOperator == Operator.ADD || baseOperator == Operator.SUBTRACT) {
+      combinedValue = Arg.asModifier(combinedValue.getInt());
+    }
+
+    else if (baseOperator == Operator.MULTIPLY) {
+      combinedValue = new Arg(Operator.MULTIPLY + combinedValue.get());
     }
 
     return combinedValue;

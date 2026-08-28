@@ -1,6 +1,7 @@
 package nationGen.misc;
 
 public enum CommandType {
+    COPYSTATS("#copystats", false),
     CUSTOMMAGIC("#custommagic", true),
     ITEMSLOTS("#itemslots", false),
     MAGICBOOST("#magicboost", true),

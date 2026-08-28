@@ -1,9 +1,16 @@
 #newitem
+#id nooffhand
+#basechance 0
+#gameid -1
+#enditem
+
+#newitem
 #id offhandaxe
 #gameid 646
 #sprite /graphics/weapon/bronze/hatchet_oh.png
 #offsetx 0
 #offsety 4
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -12,6 +19,7 @@
 #sprite /graphics/weapon/bronze/hammer_oh.png
 #offsetx -2
 #offsety 2
+#itemslot hand +1
 #enditem
 
 
@@ -21,6 +29,7 @@
 #sprite /graphics/offhand/standard/mace.png
 #offsetx 0
 #offsety 4
+#itemslot hand +1
 #enditem
 
 
@@ -30,6 +39,7 @@
 #sprite /graphics/weapon/bronze/shortsword_oh.png
 #offsetx -2
 #offsety 2
+#itemslot hand +1
 #enditem
 
 
@@ -39,6 +49,7 @@
 #sprite /graphics/weapon/bronze/kopesh_oh.png
 #offsetx -2
 #offsety 2
+#itemslot hand +1
 #enditem
 
 #newitem

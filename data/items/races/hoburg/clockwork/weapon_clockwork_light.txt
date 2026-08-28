@@ -4,6 +4,7 @@
 #sprite /graphics/weapon/standard/axe.png
 #theme "primitive"
 #tag "name infantry axeman"
+#itemslot hand +1
 #offsetx 1
 #offsety 7
 #enditem
@@ -14,6 +15,8 @@
 #sprite /graphics/hoburg/weapon/greataxe.png
 #theme "primitive"
 #tag "name infantry axeman"
+#itemslot hand +2
+#needs offhand nooffhand
 #offsetx 0
 #offsety -5
 #enditem
@@ -24,6 +27,8 @@
 #sprite /graphics/hoburg/weapon/halberd.png
 #tag "name infantry halberdier"
 #theme "advanced"
+#itemslot hand +2
+#needs offhand nooffhand
 #offsetx 0
 #offsety -5
 #enditem
@@ -32,6 +37,7 @@
 #id hammer
 #gameid 13
 #sprite /graphics/weapon/standard/hammer.png
+#itemslot hand +1
 #offsetx 1
 #offsety 5
 #enditem
@@ -42,6 +48,7 @@
 #sprite /graphics/weapon/standard/mace.png
 #theme "primitive"
 #tag "name infantry maceman"
+#itemslot hand +1
 #offsetx 1
 #offsety 7
 #enditem
@@ -50,6 +57,7 @@
 #id shortsword
 #gameid 6
 #sprite /graphics/weapon/standard/shortsword.png
+#itemslot hand +1
 #offsetx 1
 #offsety 6
 #enditem
@@ -59,6 +67,7 @@
 #gameid 1
 #sprite /graphics/hoburg/weapon/spear.png
 #tag "name infantry spearman"
+#itemslot hand +1
 #offsetx 0
 #offsety -5
 #enditem
@@ -68,6 +77,8 @@
 #gameid 590
 #sprite /graphics/hoburg/weapon/pike.png
 #tag "name infantry pikeman"
+#itemslot hand +2
+#needs offhand nooffhand
 #offsetx 0
 #offsety -5
 #enditem
@@ -77,6 +88,7 @@
 #gameid 10
 #sprite /graphics/weapon/standard/falchion.png
 #tag "name infantry falchioneer"
+#itemslot hand +1
 #offsetx 1
 #offsety 6
 #enditem
@@ -87,8 +99,7 @@
 #tag "name infantry reaper"
 #needs offhand offhandbladehand
 #needs hands bladehands
--- head & 2 misc
-#define "#itemslots 794624"
+#itemslot bow -1
 #enditem
 
 #newitem
@@ -97,7 +108,5 @@
 #tag "name infantry crusher"
 #needs offhand offhandhammerhand
 #needs hands hammerhands
--- head & 2 misc
-#define "#itemslots 794624"
-#define "#rcost -4" -- hammer costs are included in the chassis 
+#itemslot bow -1
 #enditem

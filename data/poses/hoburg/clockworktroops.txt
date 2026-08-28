@@ -26,6 +26,12 @@
 #load offhand /data/items/races/hoburg/clockwork/offhand_clockwork_light.txt
 #load offhand /data/items/races/hoburg/normal/shields.txt -2 -7
 
+#baseitemslot head 1
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot hand 0
+#baseitemslot bow 1
+
 #endpose
 
 ---- Light clockwork troop
@@ -53,6 +59,12 @@
 #load weapon /data/items/races/hoburg/clockwork/weapon_clockwork_light.txt
 #load offhand /data/items/races/hoburg/clockwork/offhand_clockwork_light.txt
 #load offhand /data/items/races/hoburg/normal/shields.txt -2 -7
+
+#baseitemslot head 1
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot hand 0
+#baseitemslot bow 1
 
 #maxvarieties 2
 #maxunits 1
@@ -84,8 +96,7 @@
 #load helmet /data/items/races/hoburg/normal/helmet.txt -1 -16
 #load helmet /data/items/races/abysian/abysian_helmet.txt 1 -2
 
-#load weapon /data/items/races/human/normal/humanweapon.txt 1 -5
-#load weapon /data/items/races/abysian/weapon.txt 1 -5
+#load weapon /data/items/races/hoburg/clockwork/weapon_clockwork_offset_medium.txt 1 -5
 #load weapon /data/items/races/hoburg/clockwork/weapon_clockwork_medium.txt
 #load specialweapon /data/items/races/hoburg/clockwork/specialweapon_clockwork_medium.txt
 
@@ -95,7 +106,6 @@
 #load offhand /data/items/races/human/normal/towershields.txt 0 -5
 
 #load headslot /data/items/races/hoburg/clockwork/headslots_clockwork_medium.txt
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_medium.txt
 #load specialslot /data/items/races/hoburg/clockwork/specialslots_clockwork_medium.txt
 
 -- slots generated here are given through items; this pattern is used to be able to generate
@@ -104,6 +114,12 @@
 
 -- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 1 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot misc 2
+#baseitemslot hand 0
+#baseitemslot bow 0
 
 #endpose
 
@@ -130,18 +146,14 @@
 #load helmet /data/items/races/hoburg/normal/helmet.txt -1 -16
 #load helmet /data/items/races/abysian/abysian_helmet.txt 1 -2
 
-#load weapon /data/items/races/human/normal/humanweapon.txt 1 -5
-#load weapon /data/items/races/abysian/weapon.txt 1 -5
 #load weapon /data/items/races/hoburg/clockwork/weapon_clockwork_medium.txt
+#load weapon /data/items/races/hoburg/clockwork/weapon_clockwork_offset_medium.txt 1 -5
 #load specialweapon /data/items/races/hoburg/clockwork/specialweapon_clockwork_medium.txt
 
-#load offhand /data/items/races/human/normal/humanoffhand.txt 0 -5
-#load offhand /data/items/races/abysian/offhand.txt 0 -5
-#load offhand /data/items/races/human/normal/shields.txt 0 -5
-#load offhand /data/items/races/human/normal/towershields.txt 0 -5
+#load offhand /data/items/races/hoburg/clockwork/offhand_clockwork_medium.txt 0 -5
+#load offhand /data/items/races/hoburg/clockwork/shields_clockwork_medium.txt 0 -5
 
 #load headslot /data/items/races/hoburg/clockwork/headslots_clockwork_medium.txt
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_medium.txt
 #load specialslot /data/items/races/hoburg/clockwork/specialslots_clockwork_medium.txt
 
 -- slots generated here are given through items; this pattern is used to be able to generate
@@ -150,6 +162,12 @@
 
 -- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 0.2 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot hand 0
+#baseitemslot misc 2
+#baseitemslot bow 0
 
 #maxvarieties 2
 #maxunits 1
@@ -188,11 +206,16 @@
 #load offhand /data/items/races/hoburg/clockwork/offhand_clockwork_heavy.txt
 #load offhand /data/items/races/hoburg/clockwork/shields_clockwork_heavy.txt
 
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_heavy.txt
 #load specialslot /data/items/races/hoburg/clockwork/specialslots_clockwork_heavy.txt
 
 -- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 1 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot hand 0
+#baseitemslot misc 3
+#baseitemslot bow 0
 
 #endpose
 
@@ -244,10 +267,15 @@
 #load offhand /data/items/races/hoburg/clockwork/offhand_clockwork_colossal.txt
 #load offhand /data/items/races/hoburg/clockwork/shields_clockwork_colossal.txt
 
-#load handslots /data/items/races/hoburg/clockwork/handslots_clockwork_heavy.txt
 #load specialslot /data/items/races/hoburg/clockwork/specialslots_clockwork_colossal.txt
 
 -- these will generate some special items; some of them weapons like firespewers, some miscellaneous like supply bonuses
 #additionalweaponslot 1 specialslot
+
+#baseitemslot head 0
+#baseitemslot body 0
+#baseitemslot hand 0
+#baseitemslot misc 4
+#baseitemslot bow 0
 
 #endpose

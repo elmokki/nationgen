@@ -4,10 +4,21 @@
 #gameid -1
 #enditem
 
---- Weapons
+---- Weapons
 
 #newitem
-#id offhandaxe
+#id abysian_offhandaxe
+#gameid 17
+#sprite /graphics/abysian/offhands/axe.png
+#tag "name berserker"
+#theme "primitive"
+#theme "iron"
+#theme "abysian"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id human_offhandaxe
 #gameid 17
 #sprite /graphics/offhand/standard/axe.png
 #theme "iron"
@@ -16,6 +27,7 @@
 #theme "boreal"
 #theme "central"
 #theme "occidental"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -25,20 +37,42 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
+#itemslot hand +1
 #enditem
 
 #newitem
-#id offhandhammer
+#id abysian_offhandhammer
+#gameid 13
+#sprite /graphics/abysian/offhands/hammer.png
+#theme "iron"
+#theme "abysian"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id human_offhandhammer
 #gameid 13
 #sprite /graphics/offhand/standard/hammer.png
 #theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#itemslot hand +1
 #enditem
 
 #newitem
-#id offhandmace
+#id abysian_offhandmace
+#gameid 12
+#sprite /graphics/abysian/offhands/mace.png
+#tag "name berserker"
+#theme "primitive"
+#theme "iron"
+#theme "abysian"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id human_offhandmace
 #gameid 12
 #sprite /graphics/offhand/standard/mace.png
 #theme "iron"
@@ -47,16 +81,27 @@
 #theme "boreal"
 #theme "central"
 #theme "occidental"
+#itemslot hand +1
 #enditem
 
 #newitem
-#id offhandmorningstar
+#id abysian_offhandmorningstar
+#gameid 15
+#sprite /graphics/abysian/offhands/morningstar.png
+#theme "iron"
+#theme "abysian"
+#itemslot hand +1
+#enditem
+
+#newitem
+#id human_offhandmorningstar
 #gameid 15
 #sprite /graphics/offhand/standard/morningstar.png
 #theme "iron"
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -67,8 +112,8 @@
 #theme "austral"
 #theme "boreal"
 #theme "central"
+#itemslot hand +1
 #enditem
-
 
 #newitem
 #id offhandfalchion
@@ -77,15 +122,7 @@
 #theme "iron"
 #theme "austral"
 #theme "boreal"
-#enditem
-
-#newitem
-#id offhandkopesh
-#gameid ironkopesh
-#sprite /graphics/offhand/standard/kopesh_iron.png
-#theme "austral"
-#theme "central"
-#theme "iron"
+#itemslot hand +1
 #enditem
 
 #newitem
@@ -97,6 +134,15 @@
 #theme "boreal"
 #theme "central"
 #theme "occidental"
+#itemslot hand +1
 #enditem
 
-
+#newitem
+#id offhandkopesh
+#gameid ironkopesh
+#sprite /graphics/offhand/standard/kopesh_iron.png
+#theme "austral"
+#theme "central"
+#theme "iron"
+#itemslot hand +1
+#enditem

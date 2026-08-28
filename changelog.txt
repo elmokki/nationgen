@@ -1,3 +1,18 @@
+0.14.4 (28th August 2026)
+-----------------------------------------------------------
+FIXES
+-----------------------------------------------------------
+-	Fixed multiple hand issues with hand slots and equipped weapons.
+-	Fixed clockwork and vine troops slots following the recent changes.
+-	Fixed dynamic bodytype assignment to mounts.
+-	Fixed fossil mounts being treated as #nagas.
+-	Clockwork flails were marked as needing only 1 hand.
+-	Removed grotesque left_arm_shambler_claw offhand as an empty hand slot.
+-	Unit gcost should never be less than 1 (messes with calculations).
+-	Fixed offset of pygmy mounted club.
+-	Other minor fixes.
+
+
 0.14.3 (16th August 2026)
 -----------------------------------------------------------
 NEW

@@ -6,7 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
+import com.elmokki.Generic;
+
 import nationGen.items.DominionsItemSlot;
+import nationGen.misc.Arg;
+import nationGen.misc.Args;
 
 /** 
  * Utility abstract class to encode/decode Dominions' #itemslots bitmask. Can encode a HashMap of
@@ -39,6 +43,21 @@ public abstract class DominionsItemSlots {
         itemslots.put(DominionsItemSlot.FEET, 1);
         itemslots.put(DominionsItemSlot.MISC, 2);
         itemslots.put(DominionsItemSlot.NO_SLOTS, 0);
+
+        return itemslots;
+    }
+
+    public static HashMap<DominionsItemSlot, Integer> defaultSlots(List<Args> baseitemslotArgs) {
+        HashMap<DominionsItemSlot, Integer> itemslots = DominionsItemSlots.defaultSlots();
+
+        // #baseitemslot tags will override the base amount of slots
+        for (Args args : baseitemslotArgs) {
+            String slotName = args.getFirst().get();
+            DominionsItemSlot slot = DominionsItemSlot.fromString(slotName);
+            Arg slotAmount = args.get(1);
+            int newAmount = Generic.handleModifier(slotAmount, itemslots.get(slot));
+            itemslots.put(slot, newAmount);
+        }
 
         return itemslots;
     }
