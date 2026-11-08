@@ -173,6 +173,15 @@ public class Filter extends Entity {
           Command parsedModCommand = command.args.get(0).getCommand();
           this.addCommands(parsedModCommand);
           break;
+        case "#unitonlycommand":
+          if (command.args.size() != 1) {
+            throw new IllegalArgumentException(
+              "#unitcommand must have a single arg. Surround the command with quotes if needed."
+            );
+          }
+
+          this.addCommands(command);
+          break;
         case "#themeinc":
           // Sometimes the definition is in quotes, sometimes it's not... -_-' < sigh
           if (command.args.size() == 1) {

@@ -284,7 +284,7 @@
 #command "#att +1"
 #command "#berserk +2"
 #command "#homesick 10"
-#command "#rpcost +10"
+#unitonlycommand "#rpcost +10"
 #description "Bound to their homeland in exchange for power"
 #tag "nopose ranged"
 #tag "nopose chariot"
@@ -318,7 +318,7 @@
 #command "#enc -1"
 #command "#berserk +4"
 #command "#homesick 10"
-#command "#rpcost +20"
+#unitonlycommand "#rpcost +20"
 #description "Bound to their homeland in exchange for great power"
 #tag "nopose ranged"
 #tag "nopose chariot"
@@ -333,7 +333,7 @@
 #id "dompower"
 #basechance 0.1
 #command "#dompower +1"
-#command "#rpcost +5"
+#unitonlycommand "#rpcost +5"
 #caponlychance 1
 #filterdesc "dompower desc"
 #power 1

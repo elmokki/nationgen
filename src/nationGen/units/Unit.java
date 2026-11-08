@@ -224,6 +224,9 @@ public class Unit {
     allCommands.addAll(filterCommands);
     allCommands.addAll(this.commands);
 
+    // Toss unit-only commands if this is a commander, apply otherwise
+    this.resolveUnitOnlyCommands(allCommands);
+
     // Handle "#adjustmentcommand" tags
     for (Arg adjustmentArg : adjustmentValues) {
       tagRelatedCommands.add(adjustmentArg.getCommand());
@@ -723,7 +726,11 @@ public class Unit {
   }
 
   public Boolean isCommander() {
-    return this.nation != null && this.nation.selectCommanders().anyMatch(com -> com.equals(this));
+    boolean hasCommanderTag = this.getAllTags().containsName("commander");
+    return hasCommanderTag || (
+      this.nation != null &&
+      this.nation.selectCommanders().anyMatch(com -> com.equals(this))
+    );
   }
 
   public Boolean isSacred() {
@@ -1848,6 +1855,34 @@ public class Unit {
     polished = true;
   }
 
+  /**
+   * Iterate through a command list and resolve UnitOnlyCommands. If this
+   * unit is a commander, they get discarded. If this is a non-commander,
+   * the UnitOnlyCommand is parsed and replaced with its sub-command.
+   * @param polishedCommands<List<Command> The command list to resolve.
+   */
+  public void resolveUnitOnlyCommands(List<Command> polishedCommands) {
+    boolean isCommander = this.isCommander();
+    List<Command> unitOnlyCommands = polishedCommands.stream()
+      .filter(c -> c.isOfType(CommandType.UNITONLY))
+      .toList();
+    
+    for (Command c : unitOnlyCommands) {
+      int index = polishedCommands.indexOf(c);
+
+      // If this is a commander, we just toss the unit-only command away
+      if (isCommander) {
+        polishedCommands.remove(index);
+        continue;
+      }
+      
+      // If this is a unit, we replace it with the parsed sub-command
+      // (i.e. "#unitonlycommand '#rpcost +5'" -> "#rpcost +5")
+      Command parsedModCommand = c.args.get(0).getCommand();
+      polishedCommands.set(index, parsedModCommand);
+    }
+  }
+
   public Boolean lacksMeleeWeapon() {
     Item weapon = this.getSlot("weapon");
     Item bonusWeapon = this.getSlot("bonusweapon");
@@ -2647,5 +2682,9 @@ public class Unit {
     }
 
     return new Dimension(w, h);
+  }
+
+  public static void flagAsCommander(Unit unit) {
+    unit.tags.addName("commander");
   }
 }
