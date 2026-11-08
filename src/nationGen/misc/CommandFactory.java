@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import nationGen.misc.commands.RpCostCommand;
+import nationGen.misc.commands.UnitOnlyCommand;
 
 public abstract class CommandFactory {
     public static Command create(CommandType type, String raw, Args args, String comment) {
@@ -18,6 +19,10 @@ public abstract class CommandFactory {
 
         if (type == CommandType.RPCOST) {
             return new RpCostCommand(raw, args, comment);
+        }
+
+        else if (type == CommandType.UNITONLY) {
+            return new UnitOnlyCommand(raw, args, comment);
         }
         
         else {

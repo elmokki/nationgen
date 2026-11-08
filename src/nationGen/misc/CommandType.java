@@ -9,6 +9,7 @@ public enum CommandType {
     GCOST("#gcost", false),
     RCOST("#rcost", false),
     RPCOST("#rpcost", false),
+    UNITONLY("#unitonlycommand", true),
     WEAPON("#weapon", true);
 
     private final String raw;

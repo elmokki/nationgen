@@ -798,7 +798,7 @@
 #id "dompower"
 #basechance 0.1
 #command "#dompower +1"
-#command "#rpcost +5"
+#unitonlycommand "#rpcost +5"
 #filterdesc "dompower desc"
 #power 1
 #end
@@ -1403,7 +1403,7 @@
 #command "#str +1"
 #command "#prot +2"
 #command "#gcost *1.25"
-#command "#rpcost +20"
+#unitonlycommand "#rpcost +20"
 #price_if_command below #size 3 +5
 #filterdesc "dragonblood desc"
 #power 4
@@ -1427,7 +1427,7 @@
 #command "#str +1"
 #command "#prot +2"
 #command "#gcost *1.25"
-#command "#rpcost +20"
+#unitonlycommand "#rpcost +20"
 #price_if_command below #size 3 +5
 #filterdesc "dragonblood desc"
 #power 4
@@ -1452,7 +1452,7 @@
 #command "#str +1"
 #command "#prot +2"
 #command "#gcost *1.25"
-#command "#rpcost +20"
+#unitonlycommand "#rpcost +20"
 #price_if_command below #size 3 +5
 #filterdesc "dragonblood desc"
 #power 4
@@ -1475,7 +1475,7 @@
 #command "#str +1"
 #command "#prot +2"
 #command "#gcost *1.25"
-#command "#rpcost +20"
+#unitonlycommand "#rpcost +20"
 #price_if_command below #size 3 +5
 #filterdesc "dragonblood desc"
 #power 4
@@ -1497,7 +1497,7 @@
 #command "#str +1"
 #command "#prot +2"
 #command "#gcost *1.25"
-#command "#rpcost +20"
+#unitonlycommand "#rpcost +20"
 #price_if_command below #size 3 +5
 #filterdesc "dragonblood desc"
 #power 4

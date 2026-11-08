@@ -339,6 +339,8 @@ public class CommanderGenerator extends TroopGenerator {
           unit.addCommands(CommandFactory.create("#assassin"));
         }
       }
+
+      Unit.flagAsCommander(unit);
     }
 
     tempComs.clear();
